@@ -16,7 +16,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,' Chicago System,'نتمني ان تقضي وقتا ممتع ',`${client.users.size} Members`,'Chicago Server','we are family'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -27,7 +27,7 @@ client.on('ready', function(){
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
+        client.user.setGame(setGame[i],`http://www.twitch.tv/ledom999`);
     }, ms);
     console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
