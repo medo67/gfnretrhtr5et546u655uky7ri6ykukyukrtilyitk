@@ -15,19 +15,46 @@ client.on('ready', () => {
 });
 
 client.on('ready', function(){
-    var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Chicago System,'نتمني ان تقضي وقتا ممتع ',`${client.users.size} Members`,'Chicago Server','we are family'
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/ledom999`);
+var prefix = "-";
+var adminprefix = '-'
+
+
+const developers = ["539955332558880779","539955332558880779"]
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(adminprefix + 'setg')) {
+    client.user.setGame(argresult);
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+     if (message.content === (adminprefix + "leave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'setw')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'setl')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'sets')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/dream");
+      message.channel.send(`**✅**`)
+  }
+  if (message.content.startsWith(adminprefix + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(adminprefix + 'setava')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});
+
+
+client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
     }, ms);
     console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
@@ -54,7 +81,7 @@ client.on('ready', function(){
 });
 
 
-console.log('n3k4a is one ');
+console.log('Chicago is one ');
 client.on('ready', () => {
   console.log(`im redey`);
 });
