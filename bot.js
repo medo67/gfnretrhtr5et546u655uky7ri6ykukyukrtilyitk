@@ -16,7 +16,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Chicago System,'نتمني ان تقضي وقتا ممتع ',`${client.users.size} Members`,'Chicago Server','we are family'];
+    var setGame = [`${client.guilds.size} Server`,' Chicago System,'نتمني ان تقضي وقتا ممتع ',`${client.users.size} Members`,'Chicago Server','we are family'
     var i = -1;
     var j = 0;
     setInterval(function (){
